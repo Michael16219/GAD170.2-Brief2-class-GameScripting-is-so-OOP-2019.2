@@ -59,22 +59,23 @@ public class BattleLogic : MonoBehaviour
         //       Instantiated characters need to be added to the activeList.
 
         // Loop through each of the spawn position and instantiate a random character at that position.
-        foreach( Transform sp in spawnPositions )
+        foreach (Transform sp in spawnPositions)
         {
             // Check to see if position is null (eg it may not have been assigned in the Unity editor) If it is null, go on with other spawn positions.
-            if( sp == null ) { continue; }
+            if (sp == null) { continue; }
 
             // Instantiate a random character from the characterLibrary (*See 'Instantiate' and 'Random.Range' in the Unity Scripting Reference for more)
             // HINT: GameObject newCharacter = ...
-
+            CharacterStats newCharacter = Instantiate(characterLibrary[Random.Range(0, characterLibrary.Length)]);
             // Fix the new character GameObject name (eg remove the "(Clone)" Unity puts at the end)  Uncomment the next line...
             //newCharacter.name = newCharacter.name.Replace( "(Clone)", "" );
-
+            newCharacter.name = newCharacter.name.Replace("(Clone)", "");
             // Position the new character at the current loop spawn position.
             // HINT: newCharacter.transform.position = ...
-
-            // Add the new character to the passed in active List.
+            newCharacter.transform.position = sp.position;
+            // Add the new character to the passed in active List.  
             //activeList.Add( newCharacter.GetComponent<CharacterStats>() );
+            activeList.Add(newCharacter.GetComponent<CharacterStats>());
         }
     }
 

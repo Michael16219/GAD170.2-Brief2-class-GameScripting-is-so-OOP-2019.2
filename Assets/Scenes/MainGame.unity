@@ -789,10 +789,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2bf1e1175c6654b8cb87b0dcda8fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroLibrary: []
-  monsterLibrary: []
-  heroSpawnPoints: []
-  monsterSpawnPoints: []
+  heroLibrary:
+  - {fileID: 2768622319192830546, guid: da274387cfcce0c4b9abcd59fed1ecd7, type: 3}
+  - {fileID: 4587007153357169972, guid: b3fbf537a4792b64ba2a07f1b1108eae, type: 3}
+  monsterLibrary:
+  - {fileID: 1728764422300266428, guid: f7499044a0c2ef540b91cad474b85fb2, type: 3}
+  - {fileID: 5733465876937032352, guid: eee46bf458f1ffd40836593d211ad109, type: 3}
+  heroSpawnPoints:
+  - {fileID: 1036653964}
+  - {fileID: 1406130232}
+  - {fileID: 1164783858}
+  monsterSpawnPoints:
+  - {fileID: 2014948470}
+  - {fileID: 1842186815}
+  - {fileID: 385042840}
   ouputLog: {fileID: 660778974}
 --- !u!4 &1592561281
 Transform:
