@@ -114,13 +114,14 @@ public class BattleLogic : MonoBehaviour
         // TODO: Randomly select a hero and monster from the active heroes ( eg choosing one hero and one monster per round )
         CharacterStats hero = this.activeHeroes[ Random.Range( 0, this.activeHeroes.Count ) ];
         // HINT: CharacterStats monster = ...
+        CharacterStats monster = this.activeMonsters[Random.Range(0, this.activeMonsters.Count)]; //Pretty much just the same for the other list
 
         // Dull the color of all active characters.
         this.SetAllActiveCharacterColors( Color.gray );
 
         // Set the randomly selected, fighting hero and monster characters back to white ( eg Makes it easier to see which characters are fighting )
         hero.GetComponent<SpriteRenderer>().color = Color.white;
-        //monster.GetComponent<SpriteRenderer>().color = Color.white;
+        monster.GetComponent<SpriteRenderer>().color = Color.white;
 
         // Some text that will be
         string log = "";
@@ -147,28 +148,39 @@ public class BattleLogic : MonoBehaviour
         if( Random.value > 0.5f )
         {
             // Monster hits hero (HINT: See TakeDamage( amount ) method in CharacterStats script)
+            hero.TakeDamage(monster.damage); //Call the damage script from the hero instance, using the monster instance's damage stat as an input.
 
             // Check hero health.
             if( hero.health <= 0f )
             {
                 // If the heros' health is less than or equal to zero, then destroy the hero and output 'the monster has defeated the hero'.
                 // HINT: Destroy( ... );
-                // log = monster.name + " defeated " + hero.name + ".";
+                Destroy(hero);
+                log = monster.name + " defeated " + hero.name + ".";
             }
             else
             {
                 // If the heros' health is greater than zero, then output 'the monster hit the hero for X points of damage'.
-                // log = monster.name + " hit " + hero.name + " for " + monster.damage + " points of damage.";
+                log = monster.name + " hit " + hero.name + " for " + monster.damage + " points of damage.";
             }
         }
         else
         {
             // Hero hits monster (HINT: See TakeDamage( amount ) method in CharacterStats script)
-           
-            // Check if monster health is less than or equal to zero.
-                // If so, destroy the monster gameobject and output '{hero name} defeated {monster name}'
-                // Else, output '{hero name} hit {monster name} for {hero damage} points of damage.'
+            monster.TakeDamage(hero.damage); //Same deal as hero taking damage, just reverse the positons.
             
+            // Check if monster health is less than or equal to zero.
+            if (monster.health <= 0f)
+            {
+                // If so, destroy the monster gameobject and output '{hero name} defeated {monster name}'
+                Destroy(monster);
+                log = hero.name + " defeated " + monster.name + "."; //Variables can be concatenated into strings easily enough through math.
+            }
+            else
+            {
+                // Else, output '{hero name} hit {monster name} for {hero damage} points of damage.'
+                log = hero.name + " hit " + monster.name + " for " + hero.damage + " points of damage.";
+            }
         }
 
 
