@@ -6,6 +6,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int health;
     public int damage;
+    public float speed;
 
     public void TakeDamage( int damageAmount )
     {

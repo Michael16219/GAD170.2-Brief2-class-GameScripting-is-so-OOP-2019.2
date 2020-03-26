@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  speed: 4
 --- !u!82 &1195931711664512330
 AudioSource:
   m_ObjectHideFlags: 0
@@ -108,7 +109,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18011ded6f2d4854caed95671894c229, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

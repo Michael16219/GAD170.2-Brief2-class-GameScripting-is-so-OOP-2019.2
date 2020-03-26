@@ -145,7 +145,7 @@ public class BattleLogic : MonoBehaviour
 
 
         // EXAMPLE: Randomly choose either the the hero or the monster to hit the other.
-        if( Random.value > 0.5f )
+        if (Random.Range(0,hero.speed + monster.speed) > hero.speed)
         {
             // Monster hits hero (HINT: See TakeDamage( amount ) method in CharacterStats script)
             hero.TakeDamage(monster.damage); //Call the damage script from the hero instance, using the monster instance's damage stat as an input.
