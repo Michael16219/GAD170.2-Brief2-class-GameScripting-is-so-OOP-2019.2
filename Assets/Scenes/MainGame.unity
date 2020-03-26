@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -197,6 +198,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -277,6 +279,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -792,6 +795,14 @@ MonoBehaviour:
   heroLibrary:
   - {fileID: 2768622319192830546, guid: da274387cfcce0c4b9abcd59fed1ecd7, type: 3}
   - {fileID: 4587007153357169972, guid: b3fbf537a4792b64ba2a07f1b1108eae, type: 3}
+  - {fileID: 3400392806665720513, guid: 4a9875fce4d11dd40bd6959dbcd5827b, type: 3}
+  - {fileID: 4625915328299532468, guid: 1bb4c76e5074d8347807c80a2cd69d81, type: 3}
+  - {fileID: 3981005266247938382, guid: 85b9b7ac4c6d47c428325c7ba17a3a43, type: 3}
+  - {fileID: 5784883267846964984, guid: 78340dc8a05e13e40bbc769a56543f2c, type: 3}
+  - {fileID: 6307594753503533001, guid: aa2a533325b6a5e4b9f2fd0e933016ac, type: 3}
+  - {fileID: 3023640830201790671, guid: dbff777410d7c7c4d8a4f94c48b15b78, type: 3}
+  - {fileID: 134116409161517161, guid: 6213d25800ea5c044ac7b9e1b5b0471e, type: 3}
+  - {fileID: 200787604225126096, guid: ca4139894c05b2b4486924806c4d8141, type: 3}
   monsterLibrary:
   - {fileID: 1728764422300266428, guid: f7499044a0c2ef540b91cad474b85fb2, type: 3}
   - {fileID: 5733465876937032352, guid: eee46bf458f1ffd40836593d211ad109, type: 3}
